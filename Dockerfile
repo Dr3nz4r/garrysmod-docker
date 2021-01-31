@@ -14,7 +14,7 @@ RUN apt-get clean
 RUN rm -rf /tmp/* /var/lib/apt/lists/*
 
 # SET STEAM USER
-RUN adduser -D -h /home/container container
+RUN useradd -m -d /home/container container
 USER container
 
 ENV  USER=container HOME=/home/container
