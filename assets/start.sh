@@ -26,13 +26,15 @@ fi
 # START THE SERVER
 echo "Starting server on ${MODE} mode..."
 
-/home/gmod/server/srcds_run \
+echo ":/home/container$ /home/container/server/srcds_run -game garrysmod -norestart -strictportbind -autoupdate -steam_dir /home/container/steamcmd -steamcmd_script /home/container/update.txt -port ${PORT} -maxplayers ${MAXPLAYERS}"
+
+/home/container/server/srcds_run \
     -game garrysmod \
     -norestart \
     -strictportbind \
     -autoupdate \
-    -steam_dir "/home/gmod/steamcmd" \
-    -steamcmd_script "/home/gmod/update.txt" \
+    -steam_dir "/home/container/steamcmd" \
+    -steamcmd_script "/home/container/update.txt" \
     -port "${PORT}" \
     -maxplayers "${MAXPLAYERS}" \
     +gamemode "${GAMEMODE}" \
